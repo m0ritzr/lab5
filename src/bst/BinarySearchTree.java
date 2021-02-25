@@ -28,7 +28,7 @@ public class BinarySearchTree<E> {
 	/**
 	 * Constructs an empty binary search tree.
 	 */
-	public <E> BinarySearchTree() {
+	public BinarySearchTree() {
 		this.root = null;
 		this.size = 0;
 		comparator = null;
@@ -94,6 +94,7 @@ public class BinarySearchTree<E> {
 	 * @return comparison value as integer
 	 */
 	// Compares two node elements using the comparison method chosen
+	@SuppressWarnings("unchecked")
 	private int compare(Object k1, Object k2) {
 		if (comparator == null) {
 			return ((Comparable<E>)k1).compareTo((E) k2);
@@ -108,7 +109,6 @@ public class BinarySearchTree<E> {
 	 */
 	public int height() {
 		return getTreeHeight(root);
-
 	}
 
 	/**
