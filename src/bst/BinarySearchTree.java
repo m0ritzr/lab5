@@ -10,15 +10,21 @@ public class BinarySearchTree<E> {
   private Comparator<E> comparator;
 
 	public static void main(String[] args) throws InterruptedException {
-		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+		BinarySearchTree<String> bst= new BinarySearchTree<>((s1, s2) -> {
+			return s2.compareTo(s1);
+		});
 		BSTVisualizer bstVisualizer = new BSTVisualizer("Tree", 400, 400);
-		bst.add(29);
-		bst.add(1);
-		bst.add(40);
-		bst.add(23);
-		bst.add(43);
-		bst.add(30);
-		bst.add(48);
+		bst.add("Kim");
+		bst.add("Moritz");
+		bst.add("Bitch");
+		bst.add("Cunt");
+		bst.add("Dick");
+		bst.add("Gay");
+		bst.add("Zenith");
+		bst.add("Jesus");
+		bst.add("Image");
+		bst.add("Ztek");
+		bst.add("Isek");
 
 		bst.rebuild();
 		bst.printTree();
